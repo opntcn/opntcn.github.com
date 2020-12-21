@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta charset="utf-8">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<style type="text/css">
+ body {
+                padding: 0;
+                margin: 0;
+            }
+			
+</style>
+<head>
+<title>2020</title>
+</head>
+<html style="height: 100%;">
+  <body style="height: 100%;">
+<div id="play"></div>
+<!--
+
+-->
+</div>
+</div>
+<script type="text/javascript" src="https://cdn.aodianyun.com/static/jquery/jquery-1.7.2.min.js"></script><!-- jquery地址也可使用您的地址 -->
+<script type="text/javascript" src="https://cdn.aodianyun.com/lss/aodianplays/player.js"></script>
+<script type="text/javascript">
+var objectPlayer=new aodianPlayer({
+    container:'play',//播放器容器ID，必要参数
+    hlsUrl: 'https://myun-hw-s3.myun.tv/melj80jz/0emed7z1/l79gpbr5/0egyvnol_1608451581533742197_origin.m3u8',//控制台开通的APP hls地址，必要参数
+    /* 以下为可选参数*/
+    width: '100%',//播放器宽度，可用数字、百分比等
+    height: '100%',//播放器高度，可用数字、百分比等
+    autostart: true,//是否自动播放，默认为false
+    bufferlength: '1',//视频缓冲时间，默认为3秒。hls不支持！手机端不支持
+    maxbufferlength: '2',//最大视频缓冲时间，默认为2秒。hls不支持！手机端不支持
+    stretching: '1',//设置全屏模式,1代表按比例撑满至全屏,2代表铺满全屏,3代表视频原始大小,默认值为1。hls初始设置不支持，手机端不支持
+    controlbardisplay: 'enable',//是否显示控制栏，值为：disable、enable默认为disable。
+    adveDeAddr: 'https://myun-hw-s3.myun.tv/melj80jz/lxon18xg/1608451568503793608.jpg',//封面图片链接
+    adveWidth: 320,//封面图宽度
+    adveHeight: 240,//封面图高度
+    //adveReAddr: '',//封面图点击链接
+    isclickplay: false,//是否单击播放，默认为false
+    isfullscreen: true//是否双击全屏，默认为true
+});
+/* rtmpUrl与hlsUrl同时存在时播放器优先加载rtmp*/
+/* 以下为Aodian Player支持的事件 */
+/* objectPlayer.startPlay();//播放 */
+/* objectPlayer.pausePlay();//暂停 */
+/* objectPlayer.stopPlay();//停止 hls不支持*/
+/* objectPlayer.closeConnect();//断开连接 */
+/* objectPlayer.setMute(true);//静音或恢复音量，参数为true|false */
+/* objectPlayer.setVolume(volume);//设置音量，参数为0-100数字 */
+/* objectPlayer.setFullScreenMode(1);//设置全屏模式,1代表按比例撑满至全屏,2代表铺满全屏,3代表视频原始大小,默认值为1。手机不支持 */
+</script>
+<!-- 奥点DMS评论容器 start -->
+<!-- 奥点DMS评论容器 end -->
+<script type="text/javascript">
+var dmsConfig = {
+  container:"dms",//HTML容器ID，必要参数
+  token:"15292094738678",//安全令牌，必要参数
+  layoutId:"2222"//模板ID，必要参数
+};
+(function() {
+  var dms = document.createElement('script');
+  dms.type = 'text/javascript';
+  dms.async = true;
+  dms.src = 'https://cdn.aodianyun.com/dms/comment.js';
+  dms.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dms);
+})();
+</script>
+<h3><span>家人视频分享</span></h3>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="1" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyuzHls4B'; 
+var conf = 'prod_68eb5b2d2503c876d9d482e77bbdebf8'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) {
+var head = document.getElementsByTagName('head')[0]||document.head||document.documentElement;
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.charset = 'utf-8';
+script.id = 'changyan_mobile_js';
+script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf;
+head.appendChild(script);
+} else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+<div class="help">
+<div class="code" align="center">
+<p >手机端扫描以下二维码直接观看</p>
+
+<script type="text/javascript">
+<!--
+var myURL = document.location.href; 
+document.writeln("<p id=\"jiathis_webchat\"><img alt=\"二维码加载中...\" style=\"margin-top: 15px;\" src=\"http://live.polyv.net/qrcode?url=" + myURL + "\" height=\"240\" width=\"240\"><p class=\"open\">手机扫一扫 保存图片分享<br/></p>");
+//-->
+</script> 
+</div>
+/
+  
+</div>
+</body>
+</body>
+</html>
