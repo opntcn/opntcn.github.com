@@ -1,1 +1,447 @@
 
+
+<html>
+
+<!--template compile at 2022-11-22 08:53:05-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="http://cdn.aodianyun.com/static/wpd/wsp/css/slider.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.aodianyun.com/static/wpd/wsp/css/livestreamlayout.css"/>
+<title>默认频道</title>
+</head>
+<body>
+<style>
+html,body{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+.ui-slider{
+	height:3rem;
+}
+.ui-slider .ui-slider-wheel{
+	margin-top:0.25rem;
+	margin-bottom:0.25rem;
+}
+.ui-slider .ui-slider-item{
+	width:4rem;
+	height:2.5rem;
+}
+.ui-slider .ui-slider-item img{
+	width:96%;
+	height:2.3rem;
+}
+.ui-slider .ui-slider-item .active{
+	border:0.1rem solid #ff6600;
+}
+.channel-info{
+	background:#ebebeb;
+	margin-bottom:0;
+	color:#777;
+}
+.channel-info .back{
+	float:left;
+	margin-left:0.7rem;
+	margin-top:0.1rem;
+	padding-right:0.8rem;
+	height:2.2rem;
+	border-right:1px solid #CCC;
+	z-index:9;
+}
+.channel-info .back img{
+	height:1.4rem;
+	margin-top:0.45rem;
+}
+#dms{
+	width:100%;
+	position:relative;
+	background:#ffffff;
+	z-index:9;
+}
+#dms .loading{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 50%;
+  margin-left: -50px;
+  display: none;
+}
+#lss{
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	z-index:1
+}
+.mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 0;
+	margin: 0;
+	background: #000;
+	z-index: 1000;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+	display: none;
+}
+.pay-container {
+	width: 80%;
+	height: 220px;
+	background: #ffffff;
+	z-index: 1001;
+	position: absolute;
+	left: 10%;
+	bottom: 50px;
+	margin-top: -120px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #666666;
+	text-align: left;
+	display: none;
+}
+.pay-container .pay-title {
+	margin-left: 16px;
+	margin-top: 10px;
+	font-size: 18px;
+	text-align: center;
+}
+.pay-container .pay-money {
+	width: 100%;
+	margin-top: 10px;
+	font-size: 32px;
+	text-align: center;
+}
+.pay-container .desc {
+	margin-left: 16px;
+	margin-top: 10px;
+	font-size: 13px;
+	color: #666666;
+	text-align: center;
+}
+.pay-container .areward-button {
+	width: 80%;
+	height: 35px;
+	margin-left: 10%;
+	margin-top: 10px;
+	padding-top: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #17A411;
+	display: block;
+	font-size: 20px;
+	line-height: 35px;
+	text-align: center;
+	color: #ffffff;
+}
+.pay-container .cancel-areward-button {
+	width: 80%;
+	height: 35px;
+	margin-left: 10%;
+	margin-top: 10px;
+	padding-top: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #ff6600;
+	display: block;
+	font-size: 20px;
+	line-height: 35px;
+	text-align: center;
+	color: #ffffff;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+.pay-container .money {
+	width: 50%;
+	height: 30px;
+	font-size: 20px;
+	border:1px solid #cccccc;
+	-webkit-appearance: none !important;
+    margin: 0;
+    -moz-appearance:textfield;
+}
+.areward{
+	background:#ff6801 none no-repeat scroll 0 0;
+	color:#ffffff;
+	border-radius:5px;
+	padding: 5px 8px;
+	position: absolute;
+	right: 15px;
+	bottom: 50px;
+	z-index: 11;
+}
+.header-info{
+ width: 100%; height: 40px; line-height: 40px; font-size: 18px; background: #333333; color: #ffffff; text-align: left; display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top: 10px; display: none;
+}
+</style>
+
+<div class="header-info" id="headerInfo">
+&nbsp;&nbsp;默认频道</div>
+
+        <div class="surface-container" id="lssPlayBox">
+        <img id="carousel" src="http://pic.aodianyun.com/aodianyun/wxcarousel/ef426f8a3012a06dde21453671a42538/400/225" />
+        <div id="lss"></div>
+    </div>
+    
+
+
+<div class="channel-info" id="channelInfo">
+	<div class="back" onClick="window.location='http://6804.wx.cdn.aodianyun.com/layout/livestream/2164';">
+		<a href="http://6804.wx.cdn.aodianyun.com/layout/livestream/2164"><img src="http://cdn.aodianyun.com/static/wpd/wsp/images/arrowleft.png" /></a>
+    </div>
+	    <div id="liveState" class="unliving">LIVE</div>
+            <div class="tanmuing" onclick="setTanMuStatus(this);">弹幕</div>
+        <div class="channel-desc">
+    	    	<img src="http://cdn.aodianyun.com/static/wpd/wsp/images/icon02.png" />
+        <span id="pvNum">67</span>
+    			    	<img id="praiseImg" onclick="addPraises();" src="http://cdn.aodianyun.com/static/wpd/wsp/images/icon03.png" />
+    	        <span id="praiseNum">0</span>
+    	<img src="http://cdn.aodianyun.com/static/wpd/wsp/images/icon04.png" />
+        <span id="msgNum">48</span>
+    	<img src="http://cdn.aodianyun.com/static/wpd/wsp/images/icon05.png" />
+        <span id="shareNum">0</span>
+    	<div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div id="dms"><img src="http://cdn.aodianyun.com/static/wpd/wsp/images/loading.gif?v=1" class="loading"></div>
+<script type="text/javascript" src="http://cdn.aodianyun.com/static/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="http://cdn.aodianyun.com/mps/v1/lssplayer.js"></script>
+<script type="text/javascript">
+	</script>
+
+<script type="text/javascript">
+var objectPlayer = false;
+var nowM3u8 = '';
+var nowSurface = '';
+var partyId = "3939";
+var living = "0";
+
+var isPraises = "0";
+var praisesInterval;
+var praisesNum = 0;
+var DMS_SITE = 'http://6804.wx.cdn.aodianyun.com';
+var DMS_OPENID = '';
+var dmsConfig = {
+  container:"dms",
+  channelId:"2164",
+  partyId:"3939",
+  layout:"livestream",
+  dmsAppKey:"2234",
+  dmsPubKey:"pub_850c20f82ca6179494174b8e250353a1",
+  dmsSubKey:"sub_b1747664a9626853c567c4954d4639c2",
+  wxAppid:"",
+  tanMuStatus:1,
+  viewNumType:"1",
+  chatOpt:"1",
+  topic:"chat_2164",
+  controlTopic:"ctrl_2164",
+  isBlack:false,
+  isGaps:false,
+  carousel:"http://pic.aodianyun.com/aodianyun/wxcarousel/ef426f8a3012a06dde21453671a42538/400/225",
+  videoCarousel:"",
+  liveUrl:"http://6804.hlsplay.aodianyun.com/wsp_6804_1450785606/4e036d0859595f0e7baac67fce9265aa.m3u8",
+  videoUrl:""
+};
+
+wx.config({
+  debug: false,
+  appId: 'wx4f394838f20e789c',
+  timestamp: 1669078386,
+  nonceStr: 'zVAtAWqoBhPRE8h8',
+  signature: 'c7546a3b8e8381a5a2db49c078e32e2ef624559a',
+  jsApiList: [
+	  'onMenuShareTimeline',
+      'onMenuShareAppMessage'
+  ]
+});
+function shareTimeline(){
+	wx.onMenuShareTimeline({
+		title: '默认频道',
+		link: 'http://6804.wx.cdn.aodianyun.com/layout/party/3939',
+		imgUrl: 'http://pic.aodianyun.com/aodianyun/wxcarousel/ef426f8a3012a06dde21453671a42538/400/225',
+		trigger: function (res) {},
+		success: function (res) {
+			$.ajax({
+				type:'POST',
+				url:'http://6804.wx.cdn.aodianyun.com/wsp/index.php?r=layout/addPartyShares',
+				data:{uin:DMS_OPENID,partyId:partyId},
+				dataType:'json',
+				async:false,
+				success:function(data){}
+			});
+		},
+		cancel: function (res) {},
+		fail: function (res) {}
+	});
+}
+function shareAppMessage(){
+	wx.onMenuShareAppMessage({
+		title: '默认频道',
+		link: 'http://6804.wx.cdn.aodianyun.com/layout/party/3939',
+		imgUrl: 'http://pic.aodianyun.com/aodianyun/wxcarousel/ef426f8a3012a06dde21453671a42538/400/225',
+	    success: function () { 
+	       
+	    },
+	    cancel: function () { 
+	       
+	    }
+	});
+}
+
+var playCallback = null;
+var pauseCallback = null;
+playCallback = function(){
+	setTimeout(
+		function(){
+			var nowHtmlSHeight = document.body.clientHeight;
+			var h = nowHtmlSHeight-$('#lssPlayBox').height()-$('#slider').height()-$('#channelInfo').height();
+			$('#dms').height(h);
+		}
+	,1000);
+};
+pauseCallback = function(){
+	setTimeout(
+		function(){
+			var nowHtmlSHeight = document.body.clientHeight;
+			var h = nowHtmlSHeight-$('#lssPlayBox').height()-$('#slider').height()-$('#channelInfo').height();
+			$('#dms').height(h);
+		}
+	,1000);
+};
+
+$(window).load(function(){
+	var htmlSHeight = document.body.clientHeight;
+	var lssPlayBoxHeight = $('#lssPlayBox').height();
+
+	$('#dms').height(htmlSHeight-$('#lssPlayBox').height()-$('#slider').height()-$('#channelInfo').height());
+	$('.loading').show();
+	(function() {
+	  var dms = document.createElement('script');
+	  dms.type = 'text/javascript';
+	  dms.async = true;
+  	  dms.src = 'http://cdn.aodianyun.com/dms/wsp.js?v=20170220';
+	  dms.charset = 'UTF-8';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dms);
+	})();
+	if(living != '1'){
+		$('.ui-slider-item').eq(0).find('img').addClass('active');
+	}
+	setTimeout(function(){
+		shareTimeline();
+	},2000);
+	setTimeout(function(){
+		shareAppMessage();
+	},2000);
+});
+function showVideo(key,url){
+	playVideo(url,'http://pic.aodianyun.com/aodianyun/wxcarousel/ef426f8a3012a06dde21453671a42538/400/225');
+	$('.ui-slider-item').find('img').removeClass('active');
+	$('.ui-slider-item').eq(key).find('img').addClass('active');
+}
+
+function playVideo(m3u8,surface){
+	nowM3u8 = m3u8;
+	nowSurface = surface;
+	if(objectPlayer == false){
+		$('#lssPlayBox').empty();
+		objectPlayer=new mpsPlayer({
+			container:'lssPlayBox',//播放器容器ID，必要参数
+			uin: '6804',//用户ID
+			appId: 'f6bmHN1HNNNPJXWJ',//播放实例ID
+			hlsUrl:m3u8,//控制台开通的APP rtmp地址，必要参数
+			width: '100%',//视频宽度，可用数字、百分比等
+			height: '100%',//视频高度，可用数字、百分比等
+			autostart: true,//是否自动播放，默认为false
+			adveDeAddr: surface,//封面图片链接
+			controlbardisplay: 'enable',//是否显示控制栏，值为：disable、enable默认为disable。
+			isclickplay: false,//是否单击播放，默认为false
+			isfullscreen: true,//是否双击全屏，默认为true
+			mobilefullscreen: false,//移动端是否全屏，默认为false
+			playCallback:playCallback,
+			pauseCallback:pauseCallback,
+			bufferlength: '1',//视频缓冲时间，默认为3秒
+			maxbufferlength: '2',//最大视频缓冲时间，默认为2秒
+			stretching: '1',//设置全屏模式,1代表按比例撑满至全屏,2代表铺满全屏,3代表视频原始大小,默认值为1
+			enablehtml5:true
+		});
+	}
+	else{
+		objectPlayer.changePlayer(m3u8);
+	}
+}
+
+function setTanMuStatus(obj){
+	if(typeof(dmsTanMuStatus) == 'undefined'){
+		alert('组件正在加载中，请稍后...');
+		return;
+	}
+	if($(obj).attr('class') == 'tanmuing'){
+		dmsTanMuStatus = false;
+		$(obj).removeClass('tanmuing');
+		$(obj).addClass('untanmuing');
+		$(obj).html('弹幕');
+	}
+	else{
+		dmsTanMuStatus = true;
+		$(obj).removeClass('untanmuing');
+		$(obj).addClass('tanmuing');
+		$(obj).html('弹幕');
+	}
+}
+function addPraises(){
+	if(typeof(dmsCommonHandle) == 'undefined'){
+		alert('组件正在加载中，请稍后...');
+		return;
+	}
+	if(DMS_OPENID == 0){
+		dmsCommonHandle.wxLogin();
+	}
+	else{
+		$.ajax({
+			type:'POST',
+			url:'http://6804.wx.cdn.aodianyun.com/wsp/index.php?r=layout/addPartyPraises',
+			data:{uin:DMS_OPENID,partyId:partyId},
+			dataType:'json',
+			async:false,
+			success:function(data){
+				if(data.Flag == 100){
+					$('#praiseImg').off('click');
+					$('#praiseImg').attr('src','http://cdn.aodianyun.com/static/wpd/wsp/images/icon03b.png');
+					return;
+				}
+				else if(data.Flag == 102){
+					$('#praiseImg').off('click');
+					$('#praiseImg').attr('src','http://cdn.aodianyun.com/static/wpd/wsp/images/icon03b.png');
+					alert(data.FlagString);
+					return;
+				}
+				else{
+					alert('点赞失败，请稍后再试...');
+					return;
+				}
+			}
+		});
+	}
+}
+</script>
+</body>
+</html>
